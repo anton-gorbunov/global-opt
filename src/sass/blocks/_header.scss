@@ -1,0 +1,74 @@
+.header{
+    min-height:680px;
+    background: url(../img/main-bg.jpg) center center/cover no-repeat;
+    padding:23px 0 82px 0;
+    &__block{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__menu{
+        list-style-type: none;
+        padding-left:0;
+        margin-bottom: 0;
+        display:flex;
+        justify-content: space-between;
+    }
+    &__item{
+        border-right:1px dotted rgba(255, 255, 255, 0.4);
+        padding:0 11px;
+        &:last-child{
+            border-right:none;
+        }
+    }
+    &__link{
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 16.71px;
+        text-align: left;
+        width:100%;
+        padding:5px 0 5px 0;
+        &:hover{
+            color:$main-color;
+            border-bottom: 1px solid $main-color;
+            text-decoration: none;
+        }
+       
+    }
+    &__right{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        width:340px;
+    }
+    &__tel{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+    }
+    &__question{
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 24px;
+        text-align: right;
+    }
+    &__number{
+        color: #ffffff;
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 24px;
+        text-align: right;
+        &:hover{
+            color:#fff;
+            text-decoration: none;
+        }
+    }
+    &__btn{
+        width: 160px;
+        height: 45px;
+       
+    }
+}
