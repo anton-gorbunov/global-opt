@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   //slider
-const slider = tns({
+/* const slider = tns({
     container: '.comments__slider',
     items: 1,
     slideBy: 'page',
@@ -15,7 +15,7 @@ const slider = tns({
   document.querySelector('.next').addEventListener('click', () => {
     slider.goTo('next');
   });
-
+ */
   //to top button
 
   const btn = document.querySelector('.up-btn');
@@ -40,6 +40,23 @@ const slider = tns({
           setTimeout(backToTop,0);
       } 
   }
+
+  //hamburger
+  const hamburger = document.querySelector('.header-hamburger__block'),
+        menu = document.querySelector('.header__menu'),
+        links = menu.querySelectorAll('.header__link');
+  
+  hamburger.addEventListener('click', () => {
+    menu.classList.toggle('header__menu_active');
+    hamburger.classList.toggle('header-hamburger__block_active');
+  });
+
+  links.forEach(item => {
+    item.addEventListener('click', () => {
+      menu.classList.toggle('header__menu_active');
+      hamburger.classList.toggle('header-hamburger__block_active');
+    });
+  });
 
 });
 

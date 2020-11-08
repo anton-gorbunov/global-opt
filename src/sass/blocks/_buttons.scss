@@ -10,6 +10,9 @@
     font-size: 12px;
     height: 45px;
     display:block;
+    &:hover{
+        box-shadow: 3px 3px 10px #667076;
+    }
     
     &:active, &:focus{
         outline:none;

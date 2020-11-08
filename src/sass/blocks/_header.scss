@@ -7,6 +7,9 @@
         justify-content: space-between;
         align-items: center;
     }
+    &-hamburger{
+        display: none;
+    }
     &__menu{
         list-style-type: none;
         padding-left:0;

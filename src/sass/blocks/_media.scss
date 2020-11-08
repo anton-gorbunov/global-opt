@@ -1,0 +1,226 @@
+@media (max-width:1200px){
+    .container{
+        max-width:960px;
+    }
+    .header{
+        &__item{
+            padding:0 8px;
+            border-right:none;
+        }
+        &__link{
+            font-size: 14px;
+           
+        }
+    }
+    .questions{
+        width:290px;
+        &__btn{
+            width:145px;
+            padding:0;
+        }
+        &__number{
+            font-size: 16px;
+            
+        }
+    }
+    .promo{
+        &__title{
+            font-size: 56px;
+        }
+        &__subtitle{
+            font-size: 36px;
+        }
+        &__wrapper{
+            column-gap:10px;
+        }
+        &-block{
+            &__descr{
+                font-size: 14px;
+            }
+        }
+    }
+
+}
+@media (max-width:992px){
+    .container{
+        max-width:720px;
+    }
+    .header{
+       &__link{
+           font-size: 12px;
+       }
+    }
+    .questions{
+        width:145px;
+        flex-direction: column;
+
+        &__question{
+            display: none;
+        }
+    }
+    .promo{
+        &__title{
+            font-size: 46px;
+        }
+        &__subtitle{
+            font-size: 28px;
+        }
+        &__divider{
+            width:100%;
+        }
+        &__wrapper{
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 40px;
+        }
+        &-block__descr{
+            width:60%;
+        }
+    }
+}
+@media (max-width:768px){
+    .container{
+        max-width:540px;
+    }
+    .header{
+        position:relative;
+        &__block{
+            justify-content: space-around;
+            padding-top: 40px;
+        }
+        &-hamburger{
+            display: block;
+            position:fixed;
+            width:100%;
+            height:40px;
+            top:0;
+            background-color:$main-color;
+            &__block{
+                width:30px;
+                position:absolute;
+                top:11px;
+                right:10px;
+                span{
+                    display: block;
+                    width:100%;
+                    height:2px;
+                    margin-bottom: 6px;
+                    background-color:#fff;
+                    transition:all 0.5s;
+                }
+                &_active{
+                    transition:all 0.5s;
+                    span{
+                        margin-bottom: -2px;
+                        &:nth-child(1){
+                            transform: translateY(8px) rotate(-45deg);
+                        }
+                        &:nth-child(2){
+                            display: none;
+                        }
+                        &:nth-child(3){
+                            transform: translateY(8px) rotate(45deg);
+                        }
+                    }
+                }
+            }
+        }
+
+        &__menu{
+            position:fixed;
+            background-color:rgba(56,60,73,0.9);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height:100vh;
+            width:50%;
+            top:0 ;
+            left:-100%;
+            transition: all 1s;
+            &_active{
+                left:0;
+            }
+        }
+        &__item{
+            margin-bottom: 20px;
+        }
+        &__link{
+            font-size: 24px;
+        }
+    }
+    .promo{
+        &__descr{
+            font-size: 20px;
+        }
+        &__title{
+            font-size: 36px;
+        }
+        &__subtitle{
+            font-size: 23px;
+        }
+        &__wrapper{
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 40px;
+        }
+        &-block__descr{
+            width:80%;
+        }
+    }
+}
+@media (max-width:576px){
+    .container{
+        width:100%;
+        padding:0 10px;
+    }
+    .header{
+        &__menu{
+            width:75%
+        }
+    }
+    .promo{
+        &__descr{
+            font-size: 18px;
+        }
+        &__title{
+            font-size: 30px;
+        }
+        &__subtitle{
+            font-size: 20px;
+        }
+        &__divider{
+            margin-top: 15px;
+        }
+        &__line{
+            width:45%;
+        }
+        &__wrapper{
+            grid-template-columns: 1fr;
+        }
+        &-block{
+            &__descr{
+                width:240px;
+                font-size: 16px;
+            }
+           
+        }
+    }
+    .modal{
+        width:75%;
+        padding:25px 15px;
+        &__close{
+            right:-25px;
+        }
+        &__subtitle{
+            font-size: 15px;
+        }
+        &__descr{
+            font-size: 14px;
+        }
+        &__form{
+            width:100%;
+            
+            input{
+                width:100%;
+            }
+        }
+    }
+}
