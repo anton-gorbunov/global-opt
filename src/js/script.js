@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+  //slider
 const slider = tns({
     container: '.comments__slider',
     items: 1,
@@ -12,6 +14,58 @@ const slider = tns({
   });
   document.querySelector('.next').addEventListener('click', () => {
     slider.goTo('next');
+  });
+
+  //to top button
+
+  const btn = document.querySelector('.up-btn');
+
+  document.addEventListener('scroll', () => {
+      let scrolled = window.pageYOffset;
+      let coords = document.documentElement.clientHeight;
+
+      if (scrolled > coords ){
+          btn.classList.add('up-btn_active');
+      } else {
+          btn.classList.remove('up-btn_active');
+      }
+  });
+
+  btn.addEventListener('click', backToTop);
+  
+  function backToTop() {
+      
+      if (window.pageYOffset > 0) {
+          window.scrollBy(0,-80);
+          setTimeout(backToTop,0);
+      } 
+  }
+
+});
+
+
+$(document).ready(function () {
+  $('.call').on('click', function () {
+    $('.overlay, #call').fadeIn('slow');
+  });
+  $('.modal__close').on('click', function () {
+    $('.overlay, #call, #end').fadeOut('slow');
+  });
+
+  $('form').submit(function (e) {
+    e.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "mailer/smart.php",
+      data: $(this).serializeArray()
+    }).done(function () {
+      $(this).find("input").val("");
+      $('#call').fadeOut();
+      $('.overlay, #end').fadeIn('slow');
+
+      $('form').trigger('reset');
+    });
+    return false;
   });
 
 });

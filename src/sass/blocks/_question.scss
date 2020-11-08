@@ -1,0 +1,30 @@
+.questions{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        width:340px;
+        &__tel{
+            display:flex;
+            flex-direction: column;
+            justify-content: space-between;
+            
+        }
+        &__question{
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 24px;
+            text-align: right;
+        }
+        &__number{
+            color: #ffffff;
+            font-size: 19px;
+            font-weight: 700;
+            line-height: 24px;
+            text-align: right;
+            &:hover{
+                color:#fff;
+                text-decoration: none;
+            }
+        }
+}
