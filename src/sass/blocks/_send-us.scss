@@ -1,0 +1,49 @@
+.send-us{
+    min-height: 438px;
+    padding:62px 0 79px 0;
+    background: url(../img/question_bg.jpg) center center/cover no-repeat;
+    &__block{
+        width: 896px;
+        margin:0 auto;
+    }
+    &__header{
+        background-color: #25333c;
+        padding:16px 0;
+    }
+    &__title{
+        color: #ffffff;
+        font-size: 19px;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 0;
+        line-height: 20px;
+    }
+    &__subtitle{
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 400;
+        text-align: center;
+        text-transform: uppercase;
+        line-height: 15px;
+    }
+    &__form{
+        background-color:rgba(255,255,255,0.7);
+        padding:18px 41px 25px 41px;
+    }
+    &__textarea{
+        height: 71px;
+        border: 1px solid rgba(0, 0, 0, 0.21);
+        color: #101010;
+        font-size: 13px;
+        font-weight: 300;
+        outline:none;
+        width:100%;
+        padding:10px 0 0 25px;
+        border-radius:10px;
+        margin-top: 8px;
+    }
+    &__btn{
+        margin: 12px auto 0 auto;
+    }
+}

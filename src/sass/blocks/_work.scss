@@ -1,0 +1,36 @@
+.work{
+    padding: 51px 0 57px 0;
+    &__line{
+        margin:20px auto 0 auto;
+    }
+    &__descr{
+        width: 879px;
+    }
+    &__wrapper{
+        margin-top: 37px;
+        display:grid;
+        grid-template-columns: repeat(3,360px);
+        column-gap:30px;
+    }
+    &-block{
+        display:grid;
+        grid-template-rows: 210px 20px auto;
+        grid-auto-rows: auto;
+        row-gap:15px;
+        &__title{
+            text-align: center;
+            color: $main-color;
+            font-size: 18px;
+            font-weight: 700;
+            padding-top: 5px;
+        }
+        &__descr{
+            line-height: 22px;
+            color: #3a3a3a;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 22px;
+            text-align: center;
+        }
+    }
+}

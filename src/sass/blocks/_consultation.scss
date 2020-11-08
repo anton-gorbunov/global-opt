@@ -1,0 +1,40 @@
+.consultation{
+    padding:56px 0 80px 0;
+    &__form{
+        margin-top: 71px;
+        position:relative;
+        border:1px solid#898989;
+        padding:68px 162px 53px 162px;
+       
+    }
+    &__img-block{
+        position: absolute;
+        left:50%;
+        top:-51px;
+        transform: translateX(-50%);
+        z-index:10;
+        background-color:#fff;
+        width:124px;
+    }
+    &__round{
+        margin:0 auto;
+        width: 102px;
+        height: 102px;
+        border-radius:50%;
+        border:1px solid $main-color;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__btn{
+        width:206px;
+        background-color:#fff;
+        position: absolute;
+        bottom:-22px;
+        left:50%;
+        transform:translateX(-50%);
+        button{
+            margin:0 auto;
+        }
+    }
+}
