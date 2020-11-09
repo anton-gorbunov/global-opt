@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   //slider
-/* const slider = tns({
+const slider = tns({
     container: '.comments__slider',
     items: 1,
     slideBy: 'page',
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.next').addEventListener('click', () => {
     slider.goTo('next');
   });
- */
+
   //to top button
 
   const btn = document.querySelector('.up-btn');

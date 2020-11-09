@@ -17,6 +17,9 @@
         grid-template-rows: 210px 20px auto;
         grid-auto-rows: auto;
         row-gap:15px;
+        &__img{
+            width:100%;
+        }
         &__title{
             text-align: center;
             color: $main-color;
