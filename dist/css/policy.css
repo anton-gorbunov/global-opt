@@ -2,6 +2,10 @@
 *{
     font-family: "Raleway", sans-serif;
     line-height: 28px;
+    box-sizing: border-box;
+}
+body{
+    padding:0px 10px;
 }
 
 ul{
@@ -19,9 +23,42 @@ li{
     font-size: 16px;
 }
 .container{
-    width:940px;
-    margin: 0 auto;
+    width:1140px;
+    margin:0 auto;
     border:2px solid #EEEEEE;
     padding:20px;
     border-radius:10px;
 }
+@media (max-width:1200px){
+    .container{
+        max-width:960px;
+    }
+}
+@media (max-width:992px){
+    .container{
+        max-width:720px
+    }
+    h1{
+        font-size: 28px;
+    }
+    li{
+        font-size: 14px;
+    }
+}
+@media (max-width:768px){
+    .container{
+        max-width:540px;
+    }
+}
+@media (max-width:576px){
+    .container{
+        width:100%;
+    }
+    h1{
+        font-size: 16px;
+    }
+    ul{
+        padding-left: 0;
+    }
+}
+

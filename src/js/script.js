@@ -58,31 +58,107 @@ const slider = tns({
     });
   });
 
-});
+  //modal
 
+  const overlay = document.querySelector('.overlay'),
+        modal = overlay.querySelector('#call'),
+        modalMin = overlay.querySelector('#end'),
+        closeBtns = overlay.querySelectorAll('.modal__close'),
+        callBtns = document.querySelectorAll('[data-call]');
 
-$(document).ready(function () {
-  $('.call').on('click', function () {
-    $('.overlay, #call').fadeIn('slow');
+  function openModal(modalItem){
+    overlay.classList.add('overlay_active');
+    modalItem.classList.remove('modal_disable');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){
+    overlay.classList.remove('overlay_active');
+    document.body.style.overflow = '';
+    for (let child of overlay.children){
+        child.classList.add('modal_disable');
+    }
+  }
+  function openThanksModal(messageArr){
+    closeModal();
+    openModal(modalMin);
+    modalMin.querySelector('.modal__subtitle').innerHTML = messageArr[0];
+    modalMin.querySelector('.modal__descr').innerHTML = messageArr[1];
+   
+    
+    setTimeout(() => {
+      closeModal();
+    }, 2500);
+  }
+  document.addEventListener('keydown', (event) => {
+      if (event.code === 'Escape' && overlay.classList.contains('overlay_active')){
+        closeModal();
+      }
   });
-  $('.modal__close').on('click', function () {
-    $('.overlay, #call, #end').fadeOut('slow');
+  overlay.addEventListener('click', (event) => {
+      if (event.target === overlay){
+        closeModal();
+      }
+  }); 
+  closeBtns.forEach(item => {
+    item.addEventListener('click',closeModal);
   });
 
-  $('form').submit(function (e) {
-    e.preventDefault();
-    $.ajax({
-      type: "POST",
-      url: "mailer/smart.php",
-      data: $(this).serializeArray()
-    }).done(function () {
-      $(this).find("input").val("");
-      $('#call').fadeOut();
-      $('.overlay, #end').fadeIn('slow');
-
-      $('form').trigger('reset');
+  callBtns.forEach(item => {
+    item.addEventListener('click', () => {
+      openModal(modal);
     });
-    return false;
+  });
+  // forms
+
+  const forms = document.querySelectorAll('form');
+
+  forms.forEach(form => {
+    sendForm(form);
   });
 
+  function sendForm(form){
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      
+      const messages = {
+        loading: 'icons/spinner.svg',
+        success:['Спасибо за вашу заявку!','Наш менеджер свяжется с вами в ближайшее время!'],
+        error:['Что-то пошло не так...','Попробуйте отправить заявку позже.']
+      };
+      let statusMessage = document.createElement('img');
+      statusMessage.src = messages.loading;
+      statusMessage.style.cssText = 'display:block;margin:20px auto 0 auto;';
+      form.insertAdjacentElement('afterEnd',statusMessage);
+      let formData = new FormData(form);
+      let obj = {};
+
+      formData.forEach(function(value,key) {
+        obj[key] = value;
+      });
+
+      fetch('mailer/smart.php', {
+        method: 'POST',
+        header: {
+          'Content-type':'application/json'
+        },
+        body:JSON.stringify(obj)
+      }).
+      then((data) => {
+        data.text();
+      }).
+      then(() => {
+        openThanksModal(messages.success);
+        statusMessage.remove();
+        
+      }).
+      catch(() => {
+        openThanksModal(messages.error);
+        statusMessage.remove();
+      }).finally(() => {
+        form.reset();
+      });
+
+    });
+  }
+  
 });

@@ -43,17 +43,19 @@
     <title>Global Opt</title>
 </head>
 <body>
+    <div class="header-hamburger">
+        <div class="header-hamburger__block">
+                <span></span>
+                <span></span>
+                <span></span>
+        </div>
+    </div>
     <header class="header">
        <div class="container">
+          
             <div class="header__block">
                 <a href="#"><img src="icons/logo.png" alt="logo" class="header__img"></a>
-                <div class="header-hamburger">
-                   <div class="header-hamburger__block">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                   </div>
-                </div>
+               
                 <nav>
                     <ul class="header__menu">
                         <li class="header__item"><a href="#advantages" class="header__link">Преимущества</a></li>
@@ -69,7 +71,7 @@
                         <div class="questions__question">Есть вопросы?</div>
                         <a href="tel:+79264230100" class="questions__number">+7 (926) 423 01 00</a>
                     </div>
-                    <button class="questions__btn button button_small call">Перезвоните мне</button>
+                    <button class="questions__btn button button_small call" data-call >Перезвоните мне</button>
                 </div>
             </div>
             <section class="promo">
@@ -107,7 +109,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="promo__btn button button_big call">Получить расчет</button>
+                <button class="promo__btn button button_big call" data-call >Получить расчет</button>
             </section>
        </div>
     </header>
@@ -489,7 +491,7 @@
                             <div class="questions__question">Есть вопросы?</div>
                             <a href="tel:+79264230100" class="questions__number">+7 (926) 423 01 00</a>
                         </div>
-                        <button class="questions__btn button button_small call">Перезвоните мне</button>
+                        <button class="questions__btn button button_small call " data-call>Перезвоните мне</button>
                     </div>
                 </div>
                 <div class="footer__bottom">
@@ -530,7 +532,7 @@
             <div class="modal__descr">Наш менеджер свяжется с вами в ближайшее время!</div>
         </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
     <script src="js/tiny-slider.js"></script>
     <script src="js/script.js"></script>
 </body>

@@ -6,6 +6,9 @@
     z-index: 9999;
     top:0;
     display: none;
+    &_active{
+        display:block;
+    }
 }
 .modal{
     position:absolute;
@@ -14,7 +17,8 @@
     transform:translate(-50%,-50%);
     width:380px;
     min-height:400px;
-    background-color:rgba(255,255,255,0.8);
+    background:url(../img/modal.jpg) center center/cover no-repeat;
+    border-radius:10px;
    /*  background-color:#f2f2f2; */
     padding:38px 37px 40px 40px;
     &_disable{
@@ -29,25 +33,26 @@
         color:#fff;
         font-size: 40px;
         position: absolute;
-        top:-20px;
-        right:-30px;
+        top:-10px;
+        right:10px;
         &:hover{
             cursor:pointer;
         }
     }
     &__descr{
         margin-top: 10px;
-        color: #2e2e2e;
-        font-size: 16px;
+        color: #fff;
+        font-size: 15px;
         font-weight: 400;
         line-height: 24px;
         text-align: center;
     }
     &__subtitle{
-        font-size: 18px;
+        font-size: 19px;
         font-weight: 700;
         line-height: 23px;
         text-align: center;
+        color:#fff;
     }
     &__form{
         width:268px;
